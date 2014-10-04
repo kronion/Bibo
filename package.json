@@ -1,0 +1,22 @@
+{
+  "name": "BottleMeter",
+  "version": "1.0.0",
+  "description": "Bottle which measures water consumption for HackMIT.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kronion/WattBottle"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kronion/WattBottle/issues"
+  },
+  "homepage": "https://github.com/kronion/WattBottle",
+  "dependencies": {
+    "express": "3.x"
+  }
+}

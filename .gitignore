@@ -1,0 +1,5 @@
+# User should install modules by running `npm install`
+node_modules
+
+.DS_Store
+*.swp
