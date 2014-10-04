@@ -1,14 +1,15 @@
 {
-  "name": "BottleMeter",
+  "name": "Bibo",
   "version": "1.0.0",
   "description": "Bottle which measures water consumption for HackMIT.",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kronion/WattBottle"
+    "url": "https://github.com/kronion/Bibo"
   },
   "author": "",
   "license": "ISC",
