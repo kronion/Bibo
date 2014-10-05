@@ -25,21 +25,21 @@ app.use(express.compress());
 app.use(express.static(__dirname + '/public'));
 
 /* Redirect HTTP to HTTPS */
-//app.use(function (req, res, next) {
-//  if (req.protocol === 'https') {
-//    next();
-//  }
-//  else {
-//    var new_url = 'https://' + req.headers.host + req.url;
-//    res.redirect(new_url);
-//  }
-//});
-//
-///* HSTS */
-//app.use(function(req, res, next) {
-//  res.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-//  return next();
-//});
+app.use(function (req, res, next) {
+  if (req.protocol === 'https') {
+    next();
+  }
+  else {
+    var new_url = 'https://' + req.headers.host + req.url;
+    res.redirect(new_url);
+  }
+});
+
+/* HSTS */
+app.use(function(req, res, next) {
+  res.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  return next();
+});
 
 /* Jade */
 app.set('views', __dirname + '/views');
@@ -67,7 +67,19 @@ connection.once('open', function() {
   /* Home */
   app.get('/user', function(req, res) {
     if (req.user) {
-      res.render('home.jade', { user: req.user });
+      Water.find({}, function(err, glasses) {
+        if (err) {
+          console.err.bind(console, "Mongodb error: ");
+        }
+        else {
+          var data = [];
+          for (var i = 0; i < glasses.length; i++) {
+            data.push([0, glasses[i].mLs-3500]);
+          }
+          res.render('home.jade', { user: req.user,
+                                    data: JSON.stringify(data) });
+        }
+      });
     }
     else {
       res.redirect('/');
