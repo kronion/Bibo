@@ -43,11 +43,11 @@ app.use(express.static(__dirname + '/public'));
 
 /* DB and sessions */
 var db = require('./models/db.js');
-db.configure(app, express);
 var connection = db.connection;
 connection.on('error', console.error.bind(console, 'Mongoose connection error: '));
 connection.once('open', function cb() {
   // Once control flow reaches here, we're connected to the DB
+  db.configure(app, express);
   
   /* Authentication methods */
   var auth = require('./auth/auth.js');
@@ -62,5 +62,5 @@ connection.once('open', function cb() {
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
-httpServer.listen(80);
-httpsServer.listen(443);
+httpServer.listen(3737);
+httpsServer.listen(3443);
