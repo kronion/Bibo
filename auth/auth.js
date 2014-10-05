@@ -59,13 +59,13 @@ module.exports = {
 
   /* Signup route */
   signup: function(req, res) {
-    var user = new User({ req.body.username, 
-                          req.body.password,
-                          req.body.firstname,
-                          req.body.lastname,
-                          req.body.device,
-                          false,
-                          false
+    var user = new User({ username: req.body.username, 
+                          password: req.body.password,
+                          firstname: req.body.firstname,
+                          lastname: req.body.lastname,
+                          device: req.body.device,
+                          jawbone: false,
+                          fitbit: false
     });
     user.save(function(err) {
       if (err) {

@@ -14,7 +14,7 @@ var userSchema = Schema({
   lastname:  String,
   device:    String,
   jawbone:   Boolean,
-  fitfit:    Boolean
+  fitbit:    Boolean
 });
 var User = mongoose.model('User', userSchema);
 
