@@ -1,5 +1,8 @@
 html
   head
+    include head.jade
   body
     p Welcome #{ user.username }
+    div#graph.aGraph(style="position:absolute;top:0px;left:0;float:left")
     a(href="/logout") Logout
+    include scripts.jade

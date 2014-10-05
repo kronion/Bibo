@@ -72,6 +72,12 @@ connection.once('open', function() {
       res.redirect('/');
     }
   });
+
+  /* Electric Imp */
+  app.post('/imp', function(req, res) {
+    var mLs = req.body.mLs;
+    console.log(mLs);
+  });
 });
 
 var httpServer = http.createServer(app);

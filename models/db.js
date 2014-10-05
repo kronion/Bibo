@@ -21,8 +21,7 @@ var User = mongoose.model('User', userSchema);
 /* Water schema */
 var waterSchema = new Schema({
   time: Date,
-  weight: Number,
-  device: String
+  mLs: Number
 });
 var Water = mongoose.model('Water', waterSchema);
 
