@@ -171,125 +171,78 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-/*-------LOGIN STARTS HERE -------*/
 
-/* Login Container (default to float:right) */
-#loginContainer {
-    position:relative;
-    float:right;
-    font-size:12px;
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
 }
 
-/* Login Button */
-#loginButton { 
-    cursor:pointer;
-}
-
-/* Login Button Text */
-
-/* Login Box */
-#loginBox {
+.popupContainer{
     position:absolute;
-    top:454px;
-    right:553px;
-    display:none;
-    z-index:29;
+    width:330px;
+    height: auto;
+    left:45%;
+    top:80px;
+    background: #FFF;
 }
 
+#modal_trigger {margin:100px auto; width:100px; display:block;}
 
-/* Login Form */
-#loginForm {
-    width:248px; 
-    border:1px solid #899caa;
-    border-radius:3px 0 3px 3px;
-    -moz-border-radius:3px 0 3px 3px;
-    margin-top:-1px;
-    background:#d2e0ea;
-    padding:6px;
-}
+.btn {padding:10px 20px; background: #F4F4F2;}
+.btn_red {background: #ED6347; color: #FFF;}
 
-#loginForm fieldset {
-    margin:0 0 12px 0;
-    display:block;
-    border:0;
-    padding:0;
-}
+.btn:hover {background: #E4E4E2;}
+.btn_red:hover {background: #C12B05;}
 
-fieldset#body {
-    background:#fff;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    padding:10px 13px;
-    margin:0;
-}
+a.btn {color:#666; text-align: center; text-decoration: none;}
+a.btn_red {color: #FFF;}
 
-#loginForm #checkbox {
-    width:auto;
-    margin:1px 9px 0 0;
-    float:left;
-    padding:0;
-    border:0;
-    *margin:-3px 9px 0 0; /* IE7 Fix */
-}
+.one_half {width:50%; display: block; float:left;}
+.one_half.last {width:45%; margin-left:5%;}
 
-#body label {
-    color:#3a454d;
-    margin:9px 0 0 0;
-    display:block;
-    float:left;
-}
+/* Popup Styles*/
+.popupHeader {font-size:16px; text-transform: uppercase;}
+.popupHeader {background:#F4F4F2; position:relative; padding:10px 20px; border-bottom:1px solid #DDD; font-weight:bold;}
+.popupHeader .modal_close {position: absolute; right: 0; top:0; padding:10px 15px; background:#E4E4E2; cursor: pointer; color:#aaa; font-size:16px;}
 
-#loginForm #body fieldset label {
-    display:block;
-    float:none;
-    margin:0 0 6px 0;
-}
+.popupBody {padding:20px;}
 
-/* Default Input */
-#loginForm input {
-    width:92%;
-    border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    color:#3a454d;
-    font-weight:bold;
-    padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
-    font-size:12px;
-}
 
-/* Sign In Button */
-#loginForm #login {
-    width:auto;
-    float:left;
-    background:#339cdf url(../images/loginbuttonbg.png) repeat-x;
-    color:#fff;
-    padding:7px 10px 8px 10px;
-    text-shadow:0px -1px #278db8;
-    border:1px solid #339cdf;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    margin:0 12px 0 0;
-    cursor:pointer;
-    *padding:7px 2px 8px 2px; /* IE7 Fix */
-}
+/* Social Login Form */
+.social_login {}
+.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #F4F4F2; overflow: hidden;}
+.social_login .icon {display:block; width:10px; padding:5px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
+.social_login .fb .icon {background:#3B5998;}
+.social_login .google .icon {background:#DD4B39;}
+.social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: bold; font-size: 16px; color:#777;}
+.social_login .social_box:hover {background: #E4E4E2;}
 
-/* Forgot your password */
-#loginForm span {
-    text-align:center;
-    display:block;
-    padding:7px 0 4px 0;
-}
+.centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
 
-#loginForm span a {
-    color:#3a454d;
-    text-shadow:1px 1px #fff;
-    font-size:12px;
-}
+.action_btns {clear:both; overflow: hidden;}
+.action_btns a {display: block;}
 
-input:focus {
-    outline:none;
-}
+/* User Login Form */
+.user_login {display: none;}
+.user_login label {display: block; margin-bottom:5px;}
+.user_login input[type="text"], .user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_login input[type="checkbox"] {float:left; margin-right:5px;}
+.user_login input[type="checkbox"]+label {float:left;}
+
+.user_login .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+.forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
+
+/* User Register Form */
+.user_register {display: none;}
+.user_register label {display: block; margin-bottom:5px;}
+.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register input[type="checkbox"] {float:left; margin-right:5px;}
+.user_register input[type="checkbox"]+label {float:left;}
+
+.user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
