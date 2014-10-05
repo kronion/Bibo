@@ -223,10 +223,10 @@ a.btn_red {color: #FFF;}
 .social_login .social_box:hover {background: #E4E4E2;}
 
 .img-jawbone {
-    background: url(img/jawbone.png)
+    background: url(../img/jawbone.png)
 }
 .img-fitbit {
-    background: url(img/fitbit.png)
+    background: url(../img/fitbit.png)
 }
 .centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
 
