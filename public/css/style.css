@@ -215,13 +215,19 @@ a.btn_red {color: #FFF;}
 
 /* Social Login Form */
 .social_login {}
-.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #F4F4F2; overflow: hidden;}
-.social_login .icon {display:block; width:10px; padding:5px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
-.social_login .fb .icon {background:#3B5998;}
-.social_login .google .icon {background:#DD4B39;}
+.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 0px; background: #F4F4F2; overflow: hidden;}
+.social_login .icon {display:block; width:10px; padding:15px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
+.social_login .jawbone .icon {background:#0096FF;}
+.social_login .fitbit .icon {background:#00C8C8;}
 .social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: bold; font-size: 16px; color:#777;}
 .social_login .social_box:hover {background: #E4E4E2;}
 
+.img-jawbone {
+    background: url(img/jawbone.png)
+}
+.img-fitbit {
+    background: url(img/fitbit.png)
+}
 .centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
 
 .action_btns {clear:both; overflow: hidden;}
