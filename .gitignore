@@ -1,5 +1,13 @@
 # User should install modules by running `npm install`
 node_modules
 
+# Session configuration
+models/settings.js
+
+# Key files
+server.key
+server.crt
+pem_key
+
 .DS_Store
 *.swp

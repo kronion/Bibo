@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/kronion/WattBottle",
   "dependencies": {
+    "bcrypt": "^0.8.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^0.4.1",
     "express": "3.x",
     "mongoose": "^3.8.17",
-    "passport": "^0.2.1"
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0"
   }
 }
