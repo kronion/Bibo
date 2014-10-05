@@ -1,1 +1,3 @@
-console.log('hi');
+function catme() {
+	$('#meow')
+}

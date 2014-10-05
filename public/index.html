@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Bibo</h1>
+                        <h1>Bib<a href='#' id="meow" onclick="catme()">o</a></h1>
                         <h3>Your friendly water consumption tracker</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
@@ -198,6 +198,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+    	function catme() {
+    		$('#meow').text('');
+            $('#meow').append('<img id="theImg" src="http://25.media.tumblr.com/7fcfecd8dba001ecdbae6bff5fe10342/tumblr_mg6awfY46I1s2a05ho1_400.gif" />')
+            console.log('meowmeow');
+    	}
       $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
       $(function(){
