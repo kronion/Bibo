@@ -2,7 +2,6 @@ var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt'),
     flash = require('connect-flash');
-
 var User = require('../models/db.js').User;
 
 module.exports = {
@@ -50,34 +49,63 @@ module.exports = {
 
   /* Login route */
   login: function(req, res) {
-    passport.authenticate('local',
+    (passport.authenticate('local',
         { successRedirect: '/user',
           failureRedirect: '/',
-          failureFlash: true
-        });
+        }))(req, res);
+  },
+
+  /* Logout route */
+  logout: function(req, res) {
+    req.logout();
+    res.redirect('/');
   },
 
   /* Signup route */
   signup: function(req, res) {
-    var user = new User({ username: req.body.username, 
-                          password: req.body.password,
-                          firstname: req.body.firstname,
-                          lastname: req.body.lastname,
-                          device: req.body.device,
-                          jawbone: false,
-                          fitbit: false
-    });
-    user.save(function(err) {
+    User.findOne({ username: req.body.username }, function(err, user) {
       if (err) {
-        console.error.bind(console, 'Mongoose save error: ');
-        res.send(500);
+        done(err);
+      }
+      if (user) {
+        res.redirect('/');
       }
       else {
-        // I think this will automatically sign in the user after creation
-        passport.authenticate('local',
-          { successRedirect: '/user',
-            failureRedirect: '/',
-            failureFlash: true });
+        bcrypt.genSalt(10, function(err, salt) {
+          if (err) {
+            console.error.bind(console, "Bcrypt error: ");
+          }
+          else {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+              if (err) {
+                console.error.bind(console, "Bcrypt error: ");
+              }
+              else {
+                var user = new User({ username: req.body.username, 
+                                      password: hash,
+                                      firstname: req.body.firstname,
+                                      lastname: req.body.lastname,
+                                      device: req.body.device,
+                                      jawbone: false,
+                                      fitbit: false
+                });
+                user.save(function(err) {
+                  if (err) {
+                    console.error.bind(console, 'Mongoose save error: ');
+                    res.send(500);
+                  }
+                  else {
+                    // I think this will automatically sign in the user after creation
+                    (passport.authenticate('local',
+                      { successRedirect: '/user',
+                        failureRedirect: '/',
+                        failureFlash: true }))(req, res);
+                  }
+                });
+              }
+            });
+          }
+        });
       }
     });
   }

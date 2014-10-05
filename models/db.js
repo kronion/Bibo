@@ -45,8 +45,7 @@ module.exports = {
         secure: true
       },
       store: new MongoStore({
-        mongoose_connection: mongoose.connection,
-        db: settings.db
+        mongoose_connection: mongoose.connection
       })
     }));
   }

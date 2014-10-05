@@ -128,58 +128,49 @@
 
 			<!-- Username & Password Login form -->
 			<div class="user_login">
-				<form >
-					<label>Email / Username</label>
-					<input type="text" />
-					<br />
+				<form name="login" action="login" method="post">
+					<label>Username</label>
+					<input name="username" type="text" />
 
 					<label>Password</label>
-					<input type="password" />
-					<br />
+					<input name="password" type="password" />
 
-					<div class="checkbox">
-						<input id="remember" type="checkbox" />
-						<label for="remember">Remember me on this computer</label>
-					</div>
+          <hr>
 
 					<div class="action_btns">
-						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+						<div class="one_half">
+              <a href="#" class="btn back_btn">Back</a>
+            </div>
+            <input class="one_half last btn btn_red" type="submit" value="Login">
 					</div>
 				</form>
-
-				<a href="#" class="forgot_password">Forgot password?</a>
 			</div>
 
 			<!-- Register Form -->
 			<div class="user_register">
 				<form name="signup" action="signup" method="post">
 					<label>Username</label>
-					<input name="username" type="username" />
+					<input name="username" type="text" />
 
 					<label>Password</label>
 					<input name="password" type="password" />
 
 					<label>First Name</label>
-					<input name="firstname" type="firstname" />
+					<input name="firstname" type="text" />
 
 					<label>Last Name</label>
-					<input name="lastname" type="lastname" />
+					<input name="lastname" type="text" />
 
 					<label>Device</label>
-					<input name="device" type="device" />
+					<input name="device" type="text" />
 
-
-					<div class="checkbox">
-						<input id="send_updates" type="checkbox" />
-						<label for="send_updates">Send me occasional email updates</label>
-					</div>
+          <hr>
 
 					<div class="action_btns">
-						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<!-- <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div> -->
-						  <INPUT type="submit" value="Register">
-
+						<div class="one_half">
+              <a href="#" class="btn back_btn">Back</a>
+            </div>
+            <input class="one_half last btn btn_red" type="submit" value="Register">
 					</div>
 				</form>
 			</div>
@@ -203,7 +194,7 @@
             $('#meow').append('<img id="theImg" src="http://25.media.tumblr.com/7fcfecd8dba001ecdbae6bff5fe10342/tumblr_mg6awfY46I1s2a05ho1_400.gif" />')
             console.log('meowmeow');
     	}
-      $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+      $("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
 
       $(function(){
         // Calling Login Form

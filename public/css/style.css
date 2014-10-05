@@ -4,22 +4,16 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body,
-html {
-    width: 100%;
-    height: 100%;
+body, html {
+  width: 100%;
+  height: 100%;
 }
 
-body,
-h1 a {
-    color: white;
-    },
-    h1 a:hover{ color: white;}
-h2,
-h3,
-h4,
-h5,
-h6 {
+#meow {
+  color: white;
+}
+
+h1 h2, h3, h4, h5, h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -237,20 +231,35 @@ a.btn_red {color: #FFF;}
 .action_btns a {display: block;}
 
 /* User Login Form */
-.user_login {display: none;}
-.user_login label {display: block; margin-bottom:5px;}
-.user_login input[type="text"], .user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_login input[type="checkbox"] {float:left; margin-right:5px;}
-.user_login input[type="checkbox"]+label {float:left;}
-
-.user_login .checkbox {margin-bottom: 10px; clear: both; }
-.forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
+.user_login {
+  display: none;
+}
+.user_login label {
+  display: block; 
+  margin-bottom:5px;
+}
+.user_login input {
+  display: block; 
+  width:100%; 
+  margin-bottom: 8px;
+  padding: 10px;
+  border:1px solid #DDD;
+  color:#666;
+}
 
 /* User Register Form */
-.user_register {display: none;}
-.user_register label {display: block; margin-bottom:5px;}
-.user_register input[type="username"], .user_register input[type="password"], .user_register input[type="firstname"], .user_register input[type="lastname"], .user_register input[type="device"] {display: block; width:90%; margin-bottom: 8px; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_register input[type="checkbox"] {float:left; margin-right:5px;}
-.user_register input[type="checkbox"]+label {float:left;}
-
-.user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+.user_register {
+  display: none;
+}
+.user_register label {
+  display: block; 
+  margin-bottom:5px;
+}
+.user_register input {
+  display: block; 
+  width:100%; 
+  margin-bottom: 8px; 
+  padding: 10px; 
+  border:1px solid #DDD; 
+  color:#666;
+}
