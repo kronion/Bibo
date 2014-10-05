@@ -33,9 +33,8 @@ h6 {
     color: #f8f8f8;
     background: url(../img/water.jpg) no-repeat center center;
     background-size: cover;
-
-
 }
+
 .intro-header-arrow {
         padding-bottom: 500px;
         text-align: center;
@@ -241,7 +240,7 @@ a.btn_red {color: #FFF;}
 /* User Register Form */
 .user_register {display: none;}
 .user_register label {display: block; margin-bottom:5px;}
-.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register input[type="username"], .user_register input[type="password"], .user_register input[type="firstname"], .user_register input[type="lastname"], .user_register input[type="device"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
 .user_register input[type="checkbox"] {float:left; margin-right:5px;}
 .user_register input[type="checkbox"]+label {float:left;}
 
