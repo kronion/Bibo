@@ -240,7 +240,7 @@ a.btn_red {color: #FFF;}
 .user_login input[type="checkbox"] {float:left; margin-right:5px;}
 .user_login input[type="checkbox"]+label {float:left;}
 
-.user_login .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
+.user_login .checkbox {margin-bottom: 10px; clear: both; }
 .forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
 
 /* User Register Form */
