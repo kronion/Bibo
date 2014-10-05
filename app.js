@@ -25,21 +25,21 @@ app.use(express.compress());
 app.use(express.static(__dirname + '/public'));
 
 /* Redirect HTTP to HTTPS */
-app.use(function (req, res, next) {
-  if (req.protocol === 'https') {
-    next();
-  }
-  else {
-    var new_url = 'https://' + req.headers.host + req.url;
-    res.redirect(new_url);
-  }
-});
-
-/* HSTS */
-app.use(function(req, res, next) {
-  res.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-  return next();
-});
+//app.use(function (req, res, next) {
+//  if (req.protocol === 'https') {
+//    next();
+//  }
+//  else {
+//    var new_url = 'https://' + req.headers.host + req.url;
+//    res.redirect(new_url);
+//  }
+//});
+//
+///* HSTS */
+//app.use(function(req, res, next) {
+//  res.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+//  return next();
+//});
 
 /* Jade */
 app.set('views', __dirname + '/views');
@@ -51,6 +51,7 @@ app.locals({
 /* DB and sessions */
 var db = require('./models/db.js');
 var connection = db.connection;
+var Water = db.Water;
 connection.on('error', console.error.bind(console, 'Mongoose connection error: '));
 connection.once('open', function() {
   // Once control flow reaches here, we're connected to the DB
@@ -74,13 +75,16 @@ connection.once('open', function() {
   });
 
   /* Electric Imp */
-  app.post('/imp', function(req, res) {
-    var mLs = req.body.mLs;
-    console.log(mLs);
+  app.get('/imp', function(req, res) {
+    var mLs = req.param('vol');
+    var water = new Water({ time: new Date(),
+                            mLs: mLs });
+    water.save();
+    res.send(200);
   });
 });
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
-httpServer.listen(3737);
-httpsServer.listen(3443);
+httpServer.listen(80);
+httpsServer.listen(443);
