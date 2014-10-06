@@ -2,9 +2,14 @@ html
   head
     include head.jade
   body
-    p Welcome #{ user.username }
-    div#graph.aGraph(style="position:absolute;top:0px;left:0;float:left")
-    a(href="/logout") Logout
+    div#topBar
+      h3#title Welcome to Bibo, #{ user.username }
+      a#logout(href="/logout") Logout
+    div#graph.aGraph(style="position:absolute;top:0px;left:50%;margin-left: -400px;")
     script.
       $data = JSON.parse('!{ data }');
+      var first = new Date('!{ firstDate }');
+      var last = new Date('!{ lastDate }');
+      $first = first.valueOf();
+      $last = last.valueOf();
     include scripts.jade

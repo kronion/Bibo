@@ -2,8 +2,8 @@
     
     // define dimensions of graph
     var m = [80, 80, 80, 80]; // margins
-    var w = 1500;
-    var h = 700;
+    var w = 800;
+    var h = 500;
       
     /* 
      * sample data to plot over time
@@ -15,9 +15,9 @@
 
     var data = $data;
 
-    var startTime = new Date(1335035400000);
-    var endTime = new Date(1335040600000);
-    var timeStep = 30000;
+    var startTime = new Date($first);
+    var endTime = new Date($last);
+    var timeStep = ($last - $first)/data.length;
     
     // X scale starts at epoch time 1335035400000, ends at 1335294600000 with 300s increments
     var x = d3.time.scale().domain([startTime, endTime]).range([0, w]);
@@ -62,7 +62,7 @@
             .attr("width", w + m[1] + m[3])
             .attr("height", h + m[0] + m[2])
           .append("svg:g")
-            .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+          .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
       // create yAxis
       var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(1);

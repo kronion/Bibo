@@ -45,3 +45,21 @@ path {
   font-size: 12px;
 }
 
+#topBar {
+  color: white;
+  background-color: #bfefff;
+}
+
+#title {
+  text-align: center;
+  font-size: 28px;
+  font-weight; 300;
+}
+
+#logout {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #ee7f2d;
+}

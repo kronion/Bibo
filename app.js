@@ -74,10 +74,12 @@ connection.once('open', function() {
         else {
           var data = [];
           for (var i = 0; i < glasses.length; i++) {
-            data.push([0, glasses[i].mLs-3500]);
+            data.push([0, glasses[i].mLs-1500+i]);
           }
           res.render('home.jade', { user: req.user,
-                                    data: JSON.stringify(data) });
+                                    data: JSON.stringify(data),
+                                    firstDate: glasses[0].time.toString(),
+                                    lastDate: glasses[glasses.length-1].time.toString() });
         }
       });
     }
@@ -89,6 +91,7 @@ connection.once('open', function() {
   /* Electric Imp */
   app.get('/imp', function(req, res) {
     var mLs = req.param('vol');
+    console.log(mLs);
     var water = new Water({ time: new Date(),
                             mLs: mLs });
     water.save();
